@@ -1,0 +1,513 @@
+﻿/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+/* TOP BAR */
+.top-bar {
+    height: 75px;
+    background: #70acfa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1px solid #000;
+    position: fixed;
+    top: 0; /* start at top */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+.products2-section {
+    padding: 40px 20px;
+}
+
+.products2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.big_shock {
+}
+.lays2{
+margin:100px;
+
+
+}
+.product2 {
+    text-align: center;
+    width:100vw;
+}
+
+    .product2 img {
+        width: 100%;
+        height: 200px; /* nastav stejnou výšku pro všechny obrázky */
+        object-fit: cover; /* zachová proporce a ořízne přebytek */
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.2s;
+        object-fit: contain;
+        background-color: #fff; /* aby mezery nebyly průhledné */
+    }
+
+        .product2 img:hover {
+            transform: scale(0.95);
+        }
+
+.product2-name {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    float:left;
+    margin-top:300px;
+}
+.products-section {
+    padding: 40px 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.big_shock {
+}
+
+.product {
+    text-align: center;
+}
+
+    .product img {
+        width: 100%;
+        height: 200px; /* nastav stejnou výšku pro všechny obrázky */
+        object-fit: cover; /* zachová proporce a ořízne přebytek */
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.2s;
+        object-fit: contain;
+        background-color: #fff; /* aby mezery nebyly průhledné */
+    }
+
+        .product img:hover {
+            transform: scale(1.15);
+        }
+
+.product-name {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.price {
+    font-size: 16px;
+}
+
+.discount {
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    padding-top: 75px; /* same as top-bar height */
+}
+
+.idk {
+    display: none;
+    width: 299px;
+}
+
+.toggle {
+    display: none;
+}
+
+    .toggle:checked ~ .idk {
+        display: block;
+    }
+
+.icon {
+    cursor: pointer;
+}
+
+.logo {
+    height: 80px;
+    width: 90px;
+}
+
+.top-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    gap: 20px;
+}
+
+.content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding-left: 20px; /* gap from sidebar */
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* SIDEBAR */
+.side-menu {
+    width: 180px;
+    background: #f0f0f0;
+    border-right: 1px solid #000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 87.8vh;
+}
+
+    .side-menu a {
+        display: flex;
+        align-items: center;
+        padding: 10px 5px;
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        gap: 8px;
+    }
+
+        .side-menu a:hover {
+            background: #ddd;
+        }
+
+.cat-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* SIDEBAR DROPDOWN */
+.menu-item-sidebar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 5px;
+    font-weight: bold;
+    gap: 8px;
+}
+
+.sub-menu {
+    list-style: none;
+    padding-left: 20px;
+    margin: 5px 0 15px 0; /* hidden by default */
+}
+
+    .sub-menu li {
+        margin-bottom: 5px;
+    }
+
+        .sub-menu li a {
+            text-decoration: none;
+            color: black;
+        }
+
+.onas {
+    color: red; /* červená barva */
+    font-size: 80px; /* větší text */
+    font-weight: bold; /* volitelně tučný */
+    
+}
+/* SLIDESHOW */
+.slideshow-container {
+    position: relative;
+    width: 80vw;
+    height: 82vh;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(205, 210, 200);
+    margin: 20px auto;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+/* Fade animation */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 24px;
+    user-select: none;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    color: black;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+    }
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* umožní zalamování bloků do nového řádku */
+    gap: 20px; /* mezera mezi bloky */
+
+    background-color: #cfcfcf;
+}
+
+    /* První a druhý blok vedle sebe */
+    .container .block:nth-child(1),
+    .container .block:nth-child(2) {
+        flex: 1 1 45%; /* zabírá cca polovinu šířky, ale je flexibilní */
+        min-width: 250px; /* minimální šířka pro mobil */
+    }
+
+    /* Třetí blok pod nimi */
+    .container .block:nth-child(3) {
+        flex: 1 1 100%; /* zabírá celou šířku */
+    }
+
+.black-title3 {
+    font-size: 50px;
+    padding: 10px;
+    color: #f52f2f;
+    width: 90%; /* match slideshow width */
+    margin-top: 40px;
+}
+
+h3 {
+    color: black;
+    text-decoration: underline;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.otherpic {
+    width: 100%;
+    height: 800px; /* your specific height */
+    background-image: url('image.jpg');
+    background-size: cover; /* fills container and keeps aspect ratio */
+    background-position: center; /* centers image */
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+/* TITLE BELOW SLIDESHOW */
+.black-title {
+    display: inline-block;
+    font-size: 50px;
+    padding: 10px 20px;
+    font-style: oblique;
+    margin-top: 20px;
+    margin-left: 40%; /* moves the pink box further right */
+}
+
+.black-title4 {
+    padding: 15px 0;
+    text-align: center;
+    font-size: 20px;
+    background: #cfcfcf;
+    border-top: 5px solid white;
+    margin: 0px;
+    width: 100%; /* match slideshow width */
+}
+
+.otherpic2 {
+    width: 100%;
+    height: 800px; /* your specific height */
+    background-image: url('image.jpg');
+    background-size: cover; /* fills container and keeps aspect ratio */
+    background-position: center; /* centers image */
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dva {
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    gap: 40px; /* space between text and image */
+    background-color: #f0f0f0; /* gray background */
+    padding: 50px; /* space inside container */
+    flex-wrap: wrap; /* wrap on smaller screens */
+    line-height: 30px;
+}
+
+    .dva p {
+        flex: 1;
+        max-width: 600px; /* keeps text readable */
+        margin: 0;
+    }
+
+    .dva .otherpic {
+        max-width: 300px;
+        height: auto;
+    }
+
+/* HAMBURGER DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 60px; /* adjust based on header */
+    right: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+    .dropdown .seznam {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 0 10px 0;
+        font-size: 18px;
+    }
+
+        .dropdown .seznam li {
+            margin-bottom: 5px;
+        }
+
+            .dropdown .seznam li a {
+                color: black;
+                text-decoration: none;
+            }
+
+.footer {
+    text-align: center;
+    font-size: 50px;
+    background: #f288e6;
+    padding: 10px;
+    border: 1px solid black;
+    width: 90%; /* match slideshow width */
+    margin-top: 20px;
+}
+.product2 {
+    text-align:center;
+
+}
+.lays {
+    text-align: center;
+}
+.chips {
+width:600px;
+height:600px;
+text-align: center;
+margin-top:30px;
+}
+.almdudler {
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    margin-top: 30px;
+}
+.GaG_cookies {
+    width: 900px;
+    height: 700px;
+    text-align: center;
+    margin-top: 30px;
+}
+.big_shock {
+    width: 900px;
+    height: 600px;
+    text-align: center;
+    margin-top: 30px;
+}
+/* MEDIA QUERIES FOR MOBILES */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .side-menu {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid #000;
+        padding: 5px;
+    }
+
+        .side-menu a, .menu-item-sidebar {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+    .content-column {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+
+    .slideshow-container {
+        height: 40vh;
+    }
+
+    .black-title {
+        font-size: 36px;
+        width: 95%;
+    }
+}
+
+/* UTILITY */
+.hidden {
+    display: none;
+}
