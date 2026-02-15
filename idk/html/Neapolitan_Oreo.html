@@ -8,22 +8,28 @@
 </head>
 <body>
 
-    <header class="top-bar">
-        <img src="logo.png" class="logo" alt="Logo">
-        <div class="top-icons">
-            <label for="search-toggle">
-                <img src="lupa.png" class="icon" alt="Vyhledávání">
-            </label>
-            <input type="checkbox" id="search-toggle" class="toggle">
-
-
-
-            <input class="idk" type="text" placeholder="Napište, co hledáte">
-
-            <img src="kosik.png" class="icon" alt="Košík">
-            <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+<header class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="top-icons">
+        <label for="search-toggle">
+            <img src="lupa.png" class="icon" alt="Vyhledávání">
+        </label>
+        <input type="checkbox" id="search-toggle" class="toggle">
+        <input class="idk" type="text" placeholder="Napište, co hledáte">
+        
+        <!-- KOŠÍK -->
+        <div class="cart-dropdown hidden" id="cart-dropdown">
+            <h3>Košík</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Celkem: 0 Kč</p>
+            <button id="checkout-btn">Dokončit nákup</button>
         </div>
-    </header>
+        <img src="kosik.png" class="icon" alt="Košík">
+        <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+    </div>
+    
+</header>
+
 
     <!-- HAMBURGER DROPDOWN -->
     <nav id="hamburger-menu" class="dropdown hidden">
@@ -115,7 +121,14 @@
             </div>
 
         </nav>
-<img class="almdudler" src="produkt1.webp" alt="Produkt 5"></a> <div class="lays"> <p class="product2-name">Oreo Dessert Treats Neapolitan Limited Edition 131g IDN</p> <p class="price"><span class="discount">35 Kč</span></p> </div>
+<div class="product">
+    <a href="Neapolitan_Oreo.html"><img src="produkt1.webp" alt="Produkt 1"></a>
+    <p class="product-name">
+      Oreo Dessert Treats Neapolitan Limited Edition 131g IDN
+    </p>
+    <p class="price"><span class="discount">35 Kč</span></p>
+    <button class="buy-btn" onclick="buyProduct('Oreo Dessert Treats Neapolitan Limited Edition 131g IDN')">Koupit</button>
+</div>
     </div>
     </div>
     

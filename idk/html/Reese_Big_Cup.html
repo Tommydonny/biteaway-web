@@ -8,22 +8,27 @@
 </head>
 <body>
 
-    <header class="top-bar">
-        <img src="logo.png" class="logo" alt="Logo">
-        <div class="top-icons">
-            <label for="search-toggle">
-                <img src="lupa.png" class="icon" alt="Vyhledávání">
-            </label>
-            <input type="checkbox" id="search-toggle" class="toggle">
-
-
-
-            <input class="idk" type="text" placeholder="Napište, co hledáte">
-
-            <img src="kosik.png" class="icon" alt="Košík">
-            <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+<header class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="top-icons">
+        <label for="search-toggle">
+            <img src="lupa.png" class="icon" alt="Vyhledávání">
+        </label>
+        <input type="checkbox" id="search-toggle" class="toggle">
+        <input class="idk" type="text" placeholder="Napište, co hledáte">
+        
+        <!-- KOŠÍK -->
+        <div class="cart-dropdown hidden" id="cart-dropdown">
+            <h3>Košík</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Celkem: 0 Kč</p>
+            <button id="checkout-btn">Dokončit nákup</button>
         </div>
-    </header>
+        <img src="kosik.png" class="icon" alt="Košík">
+        <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+    </div>
+</header>
+
 
     <!-- HAMBURGER DROPDOWN -->
     <nav id="hamburger-menu" class="dropdown hidden">
@@ -112,12 +117,20 @@
 
             <div class="menu-item-sidebar">
                 <img src="phone.png" class="cat-icon"> Kontakty
-            </div>
+                </div>
+            </nav>
+<div class="products-grid">
+    <div class="product">
+        <a href="Reese_Big_Cup.html"><img src="produkt2.avif" alt="Reese"></a>
+        <p class="product-name">Reese's 2 Big Cup King Size 79g USA</p>
+        <p class="price"><span class="discount">15 Kč</span></p>
+        <button class="buy-btn" onclick="buyProduct('Reese\'s 2 Big Cup King Size 79g USA')">Koupit</button>
+    </div>
+</div>
+    </div>
+    </div>
 
-        </nav>
-<img class="big_shock" src="produkt2.avif" alt="Produkt 5"></a> <div class="lays"> <p class="product2-name">Reese's 2 Big Cup King Size 79g USA</p> <p class="price"><span class="discount">15 Kč</span></p> </div>
-    </div>
-    </div>
+
     
     <h1 class="black-title">BLACK FRIDAY</h1>
     <div class="products-section">

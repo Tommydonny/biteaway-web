@@ -8,22 +8,27 @@
 </head>
 <body>
 
-    <header class="top-bar">
-        <img src="logo.png" class="logo" alt="Logo">
-        <div class="top-icons">
-            <label for="search-toggle">
-                <img src="lupa.png" class="icon" alt="Vyhledávání">
-            </label>
-            <input type="checkbox" id="search-toggle" class="toggle">
-
-
-
-            <input class="idk" type="text" placeholder="Napište, co hledáte">
-
-            <img src="kosik.png" class="icon" alt="Košík">
-            <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+<header class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="top-icons">
+        <label for="search-toggle">
+            <img src="lupa.png" class="icon" alt="Vyhledávání">
+        </label>
+        <input type="checkbox" id="search-toggle" class="toggle">
+        <input class="idk" type="text" placeholder="Napište, co hledáte">
+        
+        <!-- KOŠÍK -->
+        <div class="cart-dropdown hidden" id="cart-dropdown">
+            <h3>Košík</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Celkem: 0 Kč</p>
+            <button id="checkout-btn">Dokončit nákup</button>
         </div>
-    </header>
+        <img src="kosik.png" class="icon" alt="Košík">
+        <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+    </div>
+    
+</header>
 
     <!-- HAMBURGER DROPDOWN -->
     <nav id="hamburger-menu" class="dropdown hidden">
@@ -115,11 +120,14 @@
             </div>
 
         </nav>
-        <img class="chips" src="produkt6.jpg" alt="Produkt 5"></a>
-        <div class="lays">
-
-            <p class="product2-name">Oreo Wafer Bar White Chocolate 5ks (5x11,6g) CHN</p>
-            <p class="price"><span class="discount">53 Kč</span></p>
+<div class="product">
+    <a href="Oreo_Wafer_White.html"><img src="produkt6.jpg" alt="Produkt 6"></a>
+    <p class="product-name">
+     Oreo Wafer Bar White Chocolate 5ks (5x11,6g) CHN
+    </p>
+    <p class="price"><span class="discount">53 Kč</span></p>
+    <button class="buy-btn" onclick="buyProduct('Oreo Wafer Bar White Chocolate 5ks (5x11,6g) CHN')">Koupit</button>
+</div>
 
         </div>
     </div>
