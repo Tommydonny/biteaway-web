@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite Away</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+ <header class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="top-icons">
+        <label for="search-toggle">
+            <img src="lupa.png" class="icon" alt="Vyhledávání">
+        </label>
+        <input type="checkbox" id="search-toggle" class="toggle">
+        <input class="idk" type="text" placeholder="Napište, co hledáte">
+        
+        <!-- KOŠÍK -->
+        <div class="cart-dropdown hidden" id="cart-dropdown">
+            <h3>Košík</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Celkem: 0 Kč</p>
+            <button id="checkout-btn">Dokončit nákup</button>
+        </div>
+        <img src="kosik.png" class="icon" alt="Košík">
+        <img src="hamburger.png" class="icon" alt="Menu" onclick="toggleMainMenu()">
+    </div>
+    
+</header>
+
+    <!-- HAMBURGER DROPDOWN -->
+    <nav id="hamburger-menu" class="dropdown hidden">
+        <h2 class="h2">🍫Sladkosti</h2>
+        <ul class="seznam">
+            <li><a href="Tycinky.html">Tyčinky</a></li>
+            <li><a href="susenky.html">Susenky</a></li>
+            <li><a href="bonbon.html">Bonbóny</a></li>
+            <li><a href="pendreky_a_pasky.html">Pendreky a pásky</a></li>
+            <li><a href="zvykacky.html">Žvýkačky</a></li>
+            <li><a href="Lizatka_a_cukrova_vata.html">Lízátka a cukrová vata</a></li>
+            <li><a href="nevsedni_sladkosti.html">Nevšední sladkosti</a></li>
+        </ul>
+
+        <h2 class="h2">🧂Slané snacky</h2>
+        <ul class="seznam">
+            <li><a href="krupky.html">Křupky</a></li>
+            <li><a href="Orisky_Kukurice_Seminka.html">Oříšky, kukuřice, semínka</a></li>
+            <li><a href="popcorn.html">Popcorn</a></li>
+            <li><a href="rasy.html">Řasy</a></li>
+            <li><a href="chipsy.html">Chipsy</a></li>
+        </ul>
+
+        <h2 class="h2">🍸Nápoje</h2>
+        <ul class="seznam">
+            <li><a href="Limonady.html">Limonády</a></li>
+            <li><a href="energy_drinky.html">Energy drinky</a></li>
+            <li><a href="ledove_caje.html">Ledové čaje</a></li>
+            <li><a href="dzusy.html">Džusy</a></li>
+            <li><a href="kava.html">Káva</a></li>
+            <li><a href="caj.html">Čaj</a></li>
+            <li><a href="mlecne_a_jogurtove_napoje.html">Mléčné a jogurtové nápoje</a></li>
+            <li><a href="bubble_tea.html">Bubble tea</a></li>
+            <li><a href="Matcha.html">Matcha</a></li>
+        </ul>
+
+        <h2 class="h2">📞Kontakty</h2>
+        <ul class="seznam">
+            <li>Telefon: +420 725 613 707</li>
+            <li>Email: biteaway0@gmail.com</li>
+            <li>Adresa: Palackého 123 738 01 Frýdek-Místek</li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <!-- SIDEBAR -->
+        <nav class="side-menu">
+            <div class="menu-item-sidebar" onclick="toggleSubMenu('sladke-sidebar')">
+                <img src="cupcake.png" class="cat-icon"> Sladké
+            </div>
+            <ul id="sladke-sidebar" class="sub-menu hidden">
+                <li><a href="Tycinky.html">Tyčinky</a></li>
+                <li><a href="susenky.html">Sušenky</a></li>
+                <li><a href="bonbon.html">Bonbóny</a></li>
+                <li><a href="pendreky_a_pasky.html">Pendreky a pásky</a></li>
+                <li><a href="zvykacky.html">Žvýkačky</a></li>
+                <li><a href="Lizatka_a_cukrova_vata.html">Lízátka a cukrová vata</a></li>
+                <li><a href="nevsedni_sladkosti.html">Nevšední sladkosti</a></li>
+            </ul>
+
+            <div class="menu-item-sidebar" onclick="toggleSubMenu('slane-sidebar')">
+                <img src="popcorn.png" class="cat-icon"> Slané
+            </div>
+            <ul id="slane-sidebar" class="sub-menu hidden">
+                <li><a href="krupky.html">Křupky</a></li>
+                <li><a href="Orisky_Kukurice_Seminka.html">Oříšky, kukuřice, semínka</a></li>
+                <li><a href="popcorn.html">Popcorn</a></li>
+                <li><a href="rasy.html">Řasy</a></li>
+                <li><a href="chipsy.html">Chipsy</a></li>
+            </ul>
+
+            <div class="menu-item-sidebar" onclick="toggleSubMenu('napoje-sidebar')">
+                <img src="dzus.png" class="cat-icon"> Nápoje
+            </div>
+            <ul id="napoje-sidebar" class="sub-menu hidden">
+                <li><a href="Limonady.html">Limonády</a></li>
+                <li><a href="energy_drinky.html">Energy drinky</a></li>
+                <li><a href="ledove_caje.html">Ledové čaje</a></li>
+                <li><a href="dzusy.html">Džusy</a></li>
+                <li><a href="kava.html">Káva</a></li>
+                <li><a href="caj.html">Čaj</a></li>
+                <li><a href="mlecne_a_jogurtove_napoje.html">Mléčné a jogurtové nápoje</a></li>
+                <li><a href="bubble_tea.html">Bubble tea</a></li>
+                <li><a href="Matcha.html">Matcha</a></li>
+            </ul>
+
+            <div class="menu-item-sidebar">
+                <img src="phone.png" class="cat-icon"> Kontakty
+            </div>
+
+        </nav>
+<div class="product">
+    <a href="Glico_Matcha_Green.html"><img src="produkt3.webp" alt="Produkt 3"></a>
+    <p class="product-name">
+      Glico Pocky Matcha Green Tea 33g IDN
+    </p>
+    <p class="price"><span class="discount">45 Kč</span></p>
+    <button class="buy-btn" onclick="buyProduct('Glico Pocky Matcha Green Tea 33g IDN')">Koupit</button>
+</div>
+    </div>
+    </div>
+    
+    <h1 class="black-title">BLACK FRIDAY</h1>
+    <div class="products-section">
+        <div class="products-grid">
+            <!-- Řádek 1 -->
+            <div class="product">
+                <a href="Neapolitan_Oreo.html"><img src="produkt1.webp" alt="Produkt 1"></a>
+                <p class="product-name">
+                  Oreo Dessert Treats Neapolitan Limited Edition 131g IDN
+                </p>
+                <p class="price"><span class="discount">35 Kč</span></p>
+            </div>
+            <div class="product">
+                <a href="Reese_Big_Cup.html"><img class="big_shock" src="produkt2.avif" alt="Produkt 2"></a>
+                <p class="product-name">Reese's 2 Big Cup King Size 79g USA</p>
+                <p class="price"><span class="discount">15 Kč</span></p>
+            </div>
+            <div class="product">
+                <a href="Glico_Matcha_Green.html"><img src="produkt3.webp" alt="Produkt 3"></a>
+                <p class="product-name">Glico Pocky Matcha Green Tea 33g IDN</p>
+                <p class="price"><span class="discount">45 Kč</span></p>
+            </div>
+
+            <!-- Řádek 2 -->
+            <div class="product">
+                <a href="Oreo_Crisp_Roll.html"><img src="produkt4.jpg" alt="Produkt 4"></a>
+                <p class="product-name">Oreo Crisp Roll Vanilla 50g CHN</p>
+                <p class="price"><span class="discount">45 Kč</span></p>
+            </div>
+            <div class="product">
+                <a href="Lotte_Fruit_Sour_Gummy.html"><img src="produkt5.webp" alt="Produkt 5"></a>
+                <p class="product-name">Lotte Jellycious Fruit Sour Gummy 51g KOR</p>
+                <p class="price"><span class="discount">50 Kč</span></p>
+            </div>
+            <div class="product">
+                <a href="Oreo_Wafer_White.html"><img src="produkt6.jpg" alt="Produkt 6"></a>
+                <p class="product-name">Oreo Wafer Bar White Chocolate 5ks (5x11,6g) CHN</p>
+                <p class="price"><span class="discount">53 Kč</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="dva">
+
+        <p>
+            <span class="onas">O nás</span>
+            <br>
+V Biteaway pro Vás vybíráme pečlivě vybrané sladké i slané snacky z celého světa, které v běžných obchodech jen tak nenajdete. Nabízíme zahraniční speciality a neustále rozšiřujeme sortiment o nové, originální chutě.
+            <br><br>
+        Rádi experimentujeme a objevujeme novinky, proto jsou některé produkty dostupné pouze v omezeném množství. Neváhejte s nákupem – oblíbené dobroty mohou rychle zmizet.
+            <br><br>
+Nevíte, na co máte chuť? Nechte výběr na nás a dopřejte si překvapení v našem BiteAway balíčku.
+            <br><br>
+Chcete být mezi prvními, kdo se dozví o našich novinkách? Sledujte nás na Instagramu  _biteaway_ ; )
+        </p>
+        <img src="logo.png" class="otherpic" alt="Logo">
+    </div>
+    <img src="down.jpg" class="otherpic2" alt="Logo">
+
+    <div class="container">
+
+    </div>
+
+    
+    <footer class="black-title4">Copyright 2025 Bite Away s.r.o.. Všechna práva vyhrazena.</footer>
+    <script src="script.js"></script>
+</body>
+</html>
